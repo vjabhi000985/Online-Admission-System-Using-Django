@@ -1,0 +1,304 @@
+{% load static %}
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Registration</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<!--link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}"-->
+<link href="{% static 'css/main.css' %}" rel="stylesheet" media="all">
+</head>
+<body>
+	<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+  <a class="navbar-brand" href="https://www.ushamartinuniversity.com">
+  	<img src="{% static 'images/a.png' %}" alt="Logo" style="width:40px;">
+  	<span>Usha Martin University,Ranchi</span>
+  </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'home' %}"><i class="fa fa-fw fa-home"></i>Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="about"><i class="fa fa-fw fa-pencil"></i>About</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="contact"><i class="fa fa-fw fa-envelope"></i>Contact</a>
+      </li>  
+      {% if user.is_authenticated %}
+        <li class="nav-item">Hello, {{user.first_name }}</li>
+        <li class="nav-item"><a href="logout" class="nav-link">Logout</a></li>
+        {% else %}
+      <li class="nav-item">
+        <a class="nav-link" href="login"><i class="fa fa-fw fa-user"></i>Login</a>
+      </li>  
+      <li class="nav-item">
+        <a class="nav-link active" href="register"><i class="fa fa-fw fa-sign-in"></i>Register</a>
+      </li>  
+      {% endif %}  
+    </ul>
+  </div>  
+</nav>
+<br>
+<div class="wrapper wrapper--w680">
+            <div class="card card-4">
+                <div class="card-body">
+
+<form method="POST" action="register" id="myForm">
+    {% csrf_token %}
+      <div class="container">
+      	<center><h1 class="title">Registration</h1></center>
+        <div class="input-group">
+        <label for="username" class="label">Username</label>
+        <input type="text" placeholder="Username" name="username" class="input--style-4" required>
+        </div>
+        <div class="input-group">
+        <label for="first_name" class="label">First Name</label>
+        <input type="text" placeholder="First Name" name="first_name" class="input--style-4" required>
+        </div>
+        <div class="input-group">
+         <label for="last_name" class="label">Last Name</label>
+        <input type="text" placeholder="Last Name" name="last_name" class="input--style-4" required>
+        </div>
+        <div class="input-group">
+        <label for="email" class="label">Email ID</label>
+        <input type="email" placeholder="Email" name="email" class="input--style-4" required>
+        </div>
+        <div class="input-group">
+        <label for="password1" class="label">Password</label>
+      	<input type="password" placeholder="Password" name="password1" class="input--style-4" required>
+        </div>
+        <div class="input-group">
+        <label for="password2" class="label">Confirm Password</label>
+        <input type="password" placeholder="Confirm Password" name="password2" class="input--style-4" required>
+        </div>
+      	<br>
+        <div class="p-t-15">
+        <button type="Submit" class="btn btn--radius-2 btn--blue">Register</button>
+        <button type="submit" class="btn btn--radius-2 btn--blue" onclick="myFunction()">Reset</button>
+        </div>
+        <br>
+        <span>Already an existing user?<a href="login">Sign In....</a></span>
+      </div>
+    
+</form>
+</div>
+</div>
+</div>
+<br>
+<!-- Site footer -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 col-sm-6 col-xs-12">
+        <p class="copyright-text">Copyright &copy; 2020 All Rights Reserved by 
+     <a href="https://www.ushamartinuniversity.com">Usha Martin University</a>.
+        </p>
+      </div>
+
+      <div class="col-md-4 col-sm-6 col-xs-12">
+        <ul class="social-icons">
+          <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
+          <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
+          <li><a class="dribbble" href="#"><i class="fa fa-dribbble"></i></a></li>
+          <li><a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>   
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+</div>
+</body>
+</html>
+<script>
+  function myFunction() {
+    document.getElementById("myForm").reset();
+  }
+  </script>
+   <!-- Jquery JS-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <!-- Vendor JS-->
+    <script src="vendor/select2/select2.min.js"></script>
+    <script src="vendor/datepicker/moment.min.js"></script>
+    <script src="vendor/datepicker/daterangepicker.js"></script>
+
+    <!-- Main JS-->
+    <script src="{% static 'js/global.js' %}"></script>
+
+<style>
+  .site-footer
+{
+  background-color:#383838;
+  padding:45px 0 20px;
+  font-size:15px;
+  line-height:24px;
+  color:#E8E8E8;
+}
+.site-footer hr
+{
+  border-top-color:#bbb;
+  opacity:0.5
+}
+.site-footer hr.small
+{
+  margin:20px 0
+}
+.site-footer h6
+{
+  color:#fff;
+  font-size:16px;
+  text-transform:uppercase;
+  margin-top:5px;
+  letter-spacing:2px
+}
+.site-footer a
+{
+  color:#737373;
+}
+.site-footer a:hover
+{
+  color:#3366cc;
+  text-decoration:none;
+}
+.footer-links
+{
+  padding-left:0;
+  list-style:none
+}
+.footer-links li
+{
+  display:block
+}
+.footer-links a
+{
+  color:#737373
+}
+.footer-links a:active,.footer-links a:focus,.footer-links a:hover
+{
+  color:#3366cc;
+  text-decoration:none;
+}
+.footer-links.inline li
+{
+  display:inline-block
+}
+.site-footer .social-icons
+{
+  text-align:right
+}
+.site-footer .social-icons a
+{
+  width:40px;
+  height:40px;
+  line-height:40px;
+  margin-left:6px;
+  margin-right:0;
+  border-radius:100%;
+  background-color:#33353d
+}
+.copyright-text
+{
+  margin:0
+}
+@media (max-width:991px)
+{
+  .site-footer [class^=col-]
+  {
+    margin-bottom:30px
+  }
+}
+@media (max-width:767px)
+{
+  .site-footer
+  {
+    padding-bottom:0
+  }
+  .site-footer .copyright-text,.site-footer .social-icons
+  {
+    text-align:center
+  }
+}
+.social-icons
+{
+  padding-left:0;
+  margin-bottom:0;
+  list-style:none
+}
+.social-icons li
+{
+  display:inline-block;
+  margin-bottom:4px
+}
+.social-icons li.title
+{
+  margin-right:15px;
+  text-transform:uppercase;
+  color:#96a2b2;
+  font-weight:700;
+  font-size:13px
+}
+.social-icons a{
+  background-color:#eceeef;
+  color:#818a91;
+  font-size:16px;
+  display:inline-block;
+  line-height:44px;
+  width:44px;
+  height:44px;
+  text-align:center;
+  margin-right:8px;
+  border-radius:100%;
+  -webkit-transition:all .2s linear;
+  -o-transition:all .2s linear;
+  transition:all .2s linear
+}
+.social-icons a:active,.social-icons a:focus,.social-icons a:hover
+{
+  color:#fff;
+  background-color:#29aafe
+}
+.social-icons.size-sm a
+{
+  line-height:34px;
+  height:34px;
+  width:34px;
+  font-size:14px
+}
+.social-icons a.facebook:hover
+{
+  background-color:#3b5998
+}
+.social-icons a.twitter:hover
+{
+  background-color:#00aced
+}
+.social-icons a.linkedin:hover
+{
+  background-color:#007bb6
+}
+.social-icons a.dribbble:hover
+{
+  background-color:#ea4c89
+}
+@media (max-width:767px)
+{
+  .social-icons li.title
+  {
+    display:block;
+    margin-right:0;
+    font-weight:600
+  }
+}
+</style>
+</body>
+</html>
+

@@ -1,0 +1,380 @@
+{% load static %}
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>About</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+</head>
+<body>
+	<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+  <a class="navbar-brand" href="https://www.ushamartinuniversity.com">
+  	<img src="{% static 'images/a.png' %}" alt="Logo" style="width:40px;">
+  	<span>Usha Martin University,Ranchi</span>
+  </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'home' %}"><i class="fa fa-fw fa-home"></i>Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link active" href="about"><i class="fa fa-fw fa-pencil"></i>About</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="contact"><i class="fa fa-fw fa-envelope"></i>Contact</a>
+      </li>  
+      {% if user.is_authenticated %}
+        <li class="nav-item">Hello, {{user.first_name }}</li>
+        <li class="nav-item"><a href="logout" class="nav-link">Logout</a></li>
+        {% else %}
+      <li class="nav-item">
+        <a class="nav-link" href="login"><i class="fa fa-fw fa-user"></i>Login</a>
+      </li>  
+      <li class="nav-item">
+        <a class="nav-link" href="register"><i class="fa fa-fw fa-sign-in"></i>Register</a>
+      </li>  
+      {% endif %}  
+    </ul>
+  </div>  
+</nav>
+<br>
+    <div class="contentLeft">
+      <h1>Programmes on Offer</h1>
+      <ul class="clearfix">
+        <li><a href="https://www.ushamartinuniversity.com/programmes/diploma-courses/">Diploma</a></li>
+        <li><a href="https://www.ushamartinuniversity.com/programmes/undergraduate-courses/">Undergraduate</a></li>
+        <li><a href="https://www.ushamartinuniversity.com/programmes/postgraduate-courses/">Postgraduate</a></li>
+        <li><a href="https://www.ushamartinuniversity.com/programmes/phd-research/">Research Degree</a></li>
+        <li><a href="https://www.ushamartinuniversity.com/programmes/integrated-programmes/">Integrated Programmes</a></li>
+      </ul>
+    </div>
+  </div>
+  <section id="middle">
+  <div class="pageWidth">
+    <div class="courseSection">
+      <h2>Courses Offered by Usha Martin University</h2>
+      <ul>
+        <li><a>Faculty of Engineering & Applied Sciences</a>
+        <div class="courseWrapper">
+        <ul class="clearfix">
+          <li><div class="courseheadingtxt">B.Tech in Mining</div>
+          <p><span>Eligibility :</span>12th PCM</p><p><span>Duration :</span>4 Years</p></li>
+          <li><div class="courseheadingtxt">B.Tech in Computer Science</div>
+          <p><span>Eligibility :</span>12th PCM</p><p><span>Duration :</span>4 Years</p></li>
+          <li><div class="courseheadingtxt">B.Tech in Mechanical</div>
+          <p><span>Eligibility :</span>12th PCM</p><p><span>Duration :</span>4 Years</p></li>
+          <li><div class="courseheadingtxt">Diploma in Civil</div>
+          <p><span>Eligibility :</span>10th</p><p><span>Duration :</span>3 Years</p></li>
+          <li><div class="courseheadingtxt">Diploma in Mechanical</div>
+          <p><span>Eligibility :</span>10th</p><p><span>Duration :</span>3 Years</p></li>
+          <li><div class="courseheadingtxt">Diploma in Mining</div>
+          <p><span>Eligibility :</span>10th</p><p><span>Duration :</span>3 Years</p></li>
+          <li><div class="courseheadingtxt">Diploma in Electrical</div>
+          <p><span>Eligibility :</span>10th</p><p><span>Duration :</span>3 Years</p></li>
+          <li><div class="courseheadingtxt">Diploma in Computer Science</div>
+          <p><span>Eligibility :</span>10th</p><p><span>Duration :</span>3 Years</p></li>
+          <li><div class="courseheadingtxt">Diploma (LE)</div>
+          <p><span>Eligibility :</span>12th with PCM</p><p><span>Duration :</span>2 Years</p></li>
+        </ul></div></li>
+
+        <li><a>Faculty of Business & Management</a>
+        <div class="courseWrapper">
+        <ul class="clearfix">
+          <li><div class="courseheadingtxt">Bachelor of Business Administration (BBA)</div>
+          <p><span>Eligibility :</span>12th</p><p><span>Duration :</span>3 Years</p></li>
+          <li><div class="courseheadingtxt">Master of Business Administration (MBA)</div>
+          <p><span>Eligibility :</span>Graduation</p><p><span>Duration :</span>2 Years</p></li>
+        </ul></div></li>
+
+        <li><a>Department of Commerce</a>
+        <div class="courseWrapper">
+        <ul class="clearfix">
+          <li><div class="courseheadingtxt">Bachelor of Commerce (B.Com)</div>
+          <p><span>Eligibility :</span>12th</p><p><span>Duration :</span>3 Years</p></li>
+          <!-- <li><div class="courseheadingtxt">Master of Commerce (M.Com)</div>
+          <p><span>Eligibility :</span>Graduation</p><p><span>Duration :</span>2 Years</p></li> -->
+        </ul></div></li>
+
+        <li><a>Faculty of Computing & Information Technology</a>
+        <div class="courseWrapper">
+        <ul class="clearfix">
+          <li><div class="courseheadingtxt">Bachelor of Computer Application (BCA)</div>
+          <p><span>Eligibility :</span>12th</p><p><span>Duration :</span>3 Years</p></li>
+          <li><div class="courseheadingtxt">Master of Computer Application (MCA)</div>
+          <p><span>Eligibility :</span>Graduation</p><p><span>Duration :</span>3 Years</p></li>
+          <!-- <li><div class="courseheadingtxt">MCA (LE)</div>
+          <p><span>Eligibility :</span>PGDCA</p><p><span>Duration :</span>2 Years</p></li> -->
+        </ul></div></li>
+
+        <li><a>Faculty of Arts</a>
+        <div class="courseWrapper">
+        <ul class="clearfix">
+          <!-- <li><div class="courseheadingtxt">BA (Hons.) Economics</div>
+          <p><span>Eligibility :</span>12th</p><p><span>Duration :</span>3 Years</p></li> -->
+          <li><div class="courseheadingtxt">BA (Hons.) English</div>
+          <p><span>Eligibility :</span>12th</p><p><span>Duration :</span>3 Years</p></li>
+        </ul></div></li>
+
+        <li><a>Faculty of Pharmacy & Para Medical Sciences</a>
+        <div class="courseWrapper">
+        <ul class="clearfix">
+          <li><div class="courseheadingtxt">BPT</div>
+          <p><span>Eligibility :</span>12th with Science</p><p><span>Duration :</span>4.5 Years</p></li>
+          <li><div class="courseheadingtxt">Diploma in MLT</div>
+          <p><span>Eligibility :</span>12th</p><p><span>Duration :</span>2 Years</p></li>
+          <li><div class="courseheadingtxt">B.Sc MLT</div>
+          <p><span>Eligibility :</span>12th with Science</p><p><span>Duration :</span>3 Years</p></li>
+          <li><div class="courseheadingtxt">D.Pharma</div>
+          <p><span>Eligibility :</span>12th</p><p><span>Duration :</span>2 Years</p></li>
+          <li><div class="courseheadingtxt">B.Pharma</div>
+          <p><span>Eligibility :</span>12th with Science</p><p><span>Duration :</span>4 Years</p></li>
+        </ul></div></li>
+
+        <li><a>Faculty of Journalism & Mass Communication</a>
+        <div class="courseWrapper">
+        <ul class="clearfix">
+          <li><div class="courseheadingtxt">BA JMC</div>
+          <p><span>Eligibility :</span>12th</p><p><span>Duration :</span>3 Years</p></li>
+          <!-- <li><div class="courseheadingtxt">Master of Journalism & Mass Communication</div>
+          <p><span>Eligibility :</span>Graduation</p><p><span>Duration :</span>2 Years</p></li> -->
+        </ul></div></li>
+
+        <li><a>Faculty of Law</a>
+        <div class="courseWrapper">
+        <ul class="clearfix">
+          <li><div class="courseheadingtxt">BBA LLB</div>
+          <p><span>Eligibility :</span>12th</p><p><span>Duration :</span>5 Years</p><!-- <span class="htxt"><sup>**</sup> Approval from BCI is awaited Which has been applied for. Offering will be made once the University gets the approval for the same</span> --></li>
+          <li><div class="courseheadingtxt">LLB</div>
+          <p><span>Eligibility :</span>Graduation</p><p><span>Duration :</span>3 Years</p><!-- <span class="htxt"><sup>**</sup> Approval from BCI is awaited Which has been applied for. Offering will be made once the University gets the approval for the same</span> --></li>
+          <li><div class="courseheadingtxt">LLM 1Yr/2Yrs</div>
+          <p><span>Eligibility :</span>Graduation</p><p><span>Duration :</span>1 Yr/2Yrs</p><!-- <span class="htxt"><sup>**</sup> Approval from BCI is awaited Which has been applied for. Offering will be made once the University gets the approval for the same</span> --></li>
+        </ul></div></li>
+
+        <!-- <li><a>Faculty of Education</a>
+        <div class="courseWrapper">
+        <ul class="clearfix">
+          <li><div class="courseheadingtxt">Integrated B.Ed.</div>
+          <p><span>Eligibility :</span>12th</p><p><span>Duration :</span>4 Years</p></li>
+        </ul></div></li> -->
+
+        <li><a>Faculty of Agriculture</a>
+        <div class="courseWrapper">
+        <ul class="clearfix">
+          <li><div class="courseheadingtxt">B.Sc.(Agriculture) Hons</div>
+          <p><span>Eligibility :</span>12th with Science</p><p><span>Duration :</span>4 Years</p></li>
+        </ul></div></li>
+
+        <li><a>Research Programs</a>
+        <div class="courseWrapper">
+        <ul class="clearfix">
+          <li><div class="courseheadingtxt">PH.D (Commerce, Computer Science, Education, English, Management, Math, Physics, Chemistry, Agriculture)</div>
+          <p><span>Eligibility :</span>Masters/M.Phil/NET</p><p><span>Duration :</span>Minimum 3 Years</p></li>
+        </ul></div></li>
+      </ul>
+
+      
+    </div>
+  </div>
+</section>
+
+<br>
+<!-- Site footer -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 col-sm-6 col-xs-12">
+        <p class="copyright-text">Copyright &copy; 2020 All Rights Reserved by 
+     <a href="https://www.ushamartinuniversity.com">Usha Martin University</a>.
+        </p>
+      </div>
+
+      <div class="col-md-4 col-sm-6 col-xs-12">
+        <ul class="social-icons">
+          <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
+          <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
+          <li><a class="dribbble" href="#"><i class="fa fa-dribbble"></i></a></li>
+          <li><a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>   
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+</div>
+</body>
+</html>
+<style>
+  .site-footer
+{
+  background-color:#383838;
+  padding:45px 0 20px;
+  font-size:15px;
+  line-height:24px;
+  color:#E8E8E8;
+}
+.site-footer hr
+{
+  border-top-color:#bbb;
+  opacity:0.5
+}
+.site-footer hr.small
+{
+  margin:20px 0
+}
+.site-footer h6
+{
+  color:#fff;
+  font-size:16px;
+  text-transform:uppercase;
+  margin-top:5px;
+  letter-spacing:2px
+}
+.site-footer a
+{
+  color:#737373;
+}
+.site-footer a:hover
+{
+  color:#3366cc;
+  text-decoration:none;
+}
+.footer-links
+{
+  padding-left:0;
+  list-style:none
+}
+.footer-links li
+{
+  display:block
+}
+.footer-links a
+{
+  color:#737373
+}
+.footer-links a:active,.footer-links a:focus,.footer-links a:hover
+{
+  color:#3366cc;
+  text-decoration:none;
+}
+.footer-links.inline li
+{
+  display:inline-block
+}
+.site-footer .social-icons
+{
+  text-align:right
+}
+.site-footer .social-icons a
+{
+  width:40px;
+  height:40px;
+  line-height:40px;
+  margin-left:6px;
+  margin-right:0;
+  border-radius:100%;
+  background-color:#33353d
+}
+.copyright-text
+{
+  margin:0
+}
+@media (max-width:991px)
+{
+  .site-footer [class^=col-]
+  {
+    margin-bottom:30px
+  }
+}
+@media (max-width:767px)
+{
+  .site-footer
+  {
+    padding-bottom:0
+  }
+  .site-footer .copyright-text,.site-footer .social-icons
+  {
+    text-align:center
+  }
+}
+.social-icons
+{
+  padding-left:0;
+  margin-bottom:0;
+  list-style:none
+}
+.social-icons li
+{
+  display:inline-block;
+  margin-bottom:4px
+}
+.social-icons li.title
+{
+  margin-right:15px;
+  text-transform:uppercase;
+  color:#96a2b2;
+  font-weight:700;
+  font-size:13px
+}
+.social-icons a{
+  background-color:#eceeef;
+  color:#818a91;
+  font-size:16px;
+  display:inline-block;
+  line-height:44px;
+  width:44px;
+  height:44px;
+  text-align:center;
+  margin-right:8px;
+  border-radius:100%;
+  -webkit-transition:all .2s linear;
+  -o-transition:all .2s linear;
+  transition:all .2s linear
+}
+.social-icons a:active,.social-icons a:focus,.social-icons a:hover
+{
+  color:#fff;
+  background-color:#29aafe
+}
+.social-icons.size-sm a
+{
+  line-height:34px;
+  height:34px;
+  width:34px;
+  font-size:14px
+}
+.social-icons a.facebook:hover
+{
+  background-color:#3b5998
+}
+.social-icons a.twitter:hover
+{
+  background-color:#00aced
+}
+.social-icons a.linkedin:hover
+{
+  background-color:#007bb6
+}
+.social-icons a.dribbble:hover
+{
+  background-color:#ea4c89
+}
+@media (max-width:767px)
+{
+  .social-icons li.title
+  {
+    display:block;
+    margin-right:0;
+    font-weight:600
+  }
+}
+</style>
+

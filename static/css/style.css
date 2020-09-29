@@ -1,0 +1,63 @@
+
+input[type=email]{
+	width: 100%;
+	padding: 15px;
+	margin: 5px 0 22px 0;
+	display: inline-block;
+	border: none;
+	background: none;
+}
+input[type=password],
+input[type=date],
+input[type=text]{
+	width: 100%;
+	padding: 15px;
+	margin: 5px 0 22px 0;
+	display: inline-block;
+	border: none;
+	background: none;
+}
+input[type=email]:focus{
+	background-color: #ddd;
+	outline: none;
+}
+
+input[type=password]:focus,
+input[type=date]:focus,
+input[type=text]:focus
+{
+	background-color: #ddd;
+	outline: none;
+}
+hr{
+	border: 1px solid #f1f1f1;
+	margin-bottom: 25px;
+}
+.btn{
+	background-color: #FF4500;
+	color: white;
+	padding: 16px 20px;
+	margin: 8px 0;
+	border: none;
+	cursor: pointer;
+	width: 100%;
+    opacity: 0.9;
+}
+.btn:hover{
+	opacity: 1;
+}
+span,h1{
+        text-align: center;
+    }
+a {
+        /* remove default underline */
+        text-decoration: none;
+        color: var(--submit_bg);
+        font-weight: none;
+    }
+
+a:hover {
+        color: #FF4500;
+ }
+ 
+ 
