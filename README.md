@@ -65,4 +65,4 @@ The project follows a structured layout to organize its components and files. Be
   - `manage.py`: Django management script.
 
  ## Credits
- Developed by *Pandey Abhishek Nath Roy [me] and my team Shashi Oraon, Abhijit Kumar, Bineet Kumar and Bittu Kumar.*
+ Developed by *Pandey Abhishek Nath Roy [me] and my team consisting of Shashi Oraon, Abhijit Kumar, Bineet Kumar and Bittu Kumar.*
