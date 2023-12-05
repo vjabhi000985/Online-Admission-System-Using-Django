@@ -48,3 +48,21 @@ python manage.py runserver
 
 ### 7. Access the Application
 Open your browser and go to http://127.0.0.1:8000/
+
+## Project Structure
+
+The project follows a structured layout to organize its components and files. Below is an overview of the main directories and files:
+
+- *`admission_system/`*
+  - *`admissions/`*
+    - `admin.py`: Admin configuration for models.
+    - `models.py`: Definition of database models.
+    - `views.py`: Implementation of views and controllers.
+    - `urls.py`: URL patterns for the application.
+    - `templates/`: HTML templates using Bootstrap and Jinja2 syntax.
+  - `settings.py`: Django project settings.
+  - `urls.py`: Project-level URL patterns.
+  - `manage.py`: Django management script.
+
+ ## Credits
+ Developed by *Pandey Abhishek Nath Roy [me] and my team Shashi Oraon, Abhijit Kumar, Bineet Kumar and Bittu Kumar.*
